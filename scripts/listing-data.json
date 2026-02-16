@@ -1,0 +1,142 @@
+{
+  "tab-master-pro": {
+    "id": "gjjkhbcpabieefejjhabeipdldldebpb",
+    "name": "Tab Master Pro",
+    "category": "Productivity",
+    "language": "English",
+    "description": "Tab Master Pro is the ultimate tab management extension for Chrome. Save and restore browser sessions, search across all open tabs instantly, suspend inactive tabs to save memory, and detect duplicate tabs automatically.\n\n🔥 KEY FEATURES:\n\n✅ Session Manager — Save your current tabs as a named session and restore them anytime. Perfect for project-based workflows.\n\n✅ Tab Search — Instantly find any open tab by title or URL. No more hunting through dozens of tabs.\n\n✅ Tab Suspension — Automatically suspend tabs you haven't used in a while to free up memory and speed up your browser.\n\n✅ Duplicate Detection — Instantly find and close duplicate tabs cluttering your browser.\n\n✅ Tab Groups — Organize tabs into color-coded groups for better workflow management.\n\n✅ Keyboard Shortcuts — Power users can navigate and manage tabs without touching the mouse.\n\n💡 PERFECT FOR:\n• Researchers with 50+ tabs open\n• Developers switching between projects\n• Students managing coursework\n• Anyone who wants a faster, cleaner browser\n\n🔒 PRIVACY FIRST: All data stays local on your device. We never collect or transmit your browsing data.\n\n⭐ Try Tab Master Pro free today and take control of your tabs!",
+    "privacy": {
+      "single_purpose": "Tab Master Pro helps users manage their browser tabs by saving sessions, searching tabs, suspending inactive tabs, and detecting duplicates.",
+      "permissions": {
+        "tabs": "Required to read tab titles and URLs for search, duplicate detection, and session saving functionality.",
+        "storage": "Required to save user sessions, preferences, and tab group configurations locally on the device.",
+        "tabGroups": "Required to organize tabs into color-coded groups and manage group assignments.",
+        "alarms": "Required to schedule periodic checks for inactive tabs that should be suspended to save memory.",
+        "sessions": "Required to access recently closed tabs and windows for session restore functionality.",
+        "history": "Required to show recently visited pages in the tab search results for quick navigation."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  },
+  "email-finder-pro": {
+    "id": "jemhghbicieopfaflnonkdbphjlljnef",
+    "name": "Email Finder Pro",
+    "category": "Productivity",
+    "language": "English",
+    "description": "Email Finder Pro helps you find professional email addresses from LinkedIn profiles and company websites. Extract verified contact information for sales prospecting, recruiting, and business development.\n\n🔥 KEY FEATURES:\n\n✅ LinkedIn Email Extraction — Find email addresses directly from LinkedIn profiles with one click.\n\n✅ Bulk Export — Export multiple contacts at once to CSV for easy CRM import.\n\n✅ Email Verification — Built-in verification checks to ensure email accuracy before you reach out.\n\n✅ Company Domain Search — Find email patterns for any company domain.\n\n✅ Contact Dashboard — Track all discovered contacts in one organized view.\n\n💡 PERFECT FOR:\n• Sales professionals doing outbound prospecting\n• Recruiters sourcing candidates\n• Business development teams\n• Marketers building contact lists\n\n🔒 PRIVACY FIRST: Your search data stays local. We never store or share the contacts you find.\n\n⭐ Start finding emails today — install Email Finder Pro free!",
+    "privacy": {
+      "single_purpose": "Email Finder Pro helps users discover professional email addresses from LinkedIn profiles and company websites for sales and recruiting purposes.",
+      "permissions": {
+        "activeTab": "Required to read the current LinkedIn profile page to extract contact information.",
+        "storage": "Required to save discovered contacts and user preferences locally on the device."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  },
+  "etsy-seller-tools": {
+    "id": "cpnigegklnhgdglpgjhgdcpfiieaipmb",
+    "name": "Etsy Seller Tools",
+    "category": "Productivity",
+    "language": "English",
+    "description": "Etsy Seller Tools is the all-in-one toolkit for Etsy shop owners. Optimize your listings with SEO analysis, spy on competitor pricing, track your sales analytics, and get a listing quality score.\n\n🔥 KEY FEATURES:\n\n✅ SEO Tag Optimizer — Analyze your listing tags and get suggestions to improve search visibility on Etsy.\n\n✅ Competitor Price Tracking — Monitor competitor prices and get alerts when they change.\n\n✅ Sales Analytics Dashboard — Track revenue, orders, and conversion rates with beautiful charts.\n\n✅ Listing Quality Score — Get a score for each listing with actionable tips to improve.\n\n✅ Keyword Research — Discover trending keywords and tags in your Etsy niche.\n\n💡 PERFECT FOR:\n• Etsy shop owners wanting more sales\n• Handmade sellers optimizing listings\n• Print-on-demand sellers tracking competition\n• Anyone growing their Etsy business\n\n🔒 PRIVACY FIRST: Your shop data never leaves your browser. All analytics are calculated locally.\n\n⭐ Boost your Etsy sales — install Etsy Seller Tools free today!",
+    "privacy": {
+      "single_purpose": "Etsy Seller Tools helps Etsy shop owners optimize listings with SEO analysis, competitor tracking, and sales analytics.",
+      "permissions": {
+        "activeTab": "Required to read Etsy listing pages to analyze SEO tags, pricing, and listing quality.",
+        "storage": "Required to save analytics data, tracked competitors, and user preferences locally."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  },
+  "ai-chat-manager": {
+    "id": "ifkhdcodogapfkehdgjlkimligcefmac",
+    "name": "AI Chat Manager",
+    "category": "Productivity",
+    "language": "English",
+    "description": "AI Chat Manager helps you organize, search, and manage your ChatGPT and Claude conversations. Create folders, tag chats, export conversations, and find any message instantly.\n\n🔥 KEY FEATURES:\n\n✅ Folder Organization — Create custom folders to categorize your AI conversations by project, topic, or client.\n\n✅ Universal Search — Search across all your ChatGPT and Claude chats by keyword, date, or tag.\n\n✅ Export Conversations — Export chats to Markdown, PDF, or plain text for documentation and sharing.\n\n✅ Tag & Categorize — Add custom tags to conversations for quick filtering and retrieval.\n\n✅ Favorites & Bookmarks — Star important conversations so they're always one click away.\n\n💡 PERFECT FOR:\n• Power users of ChatGPT and Claude\n• Developers documenting AI-assisted code\n• Researchers organizing AI conversations\n• Teams sharing AI chat insights\n\n🔒 PRIVACY FIRST: All organization data stays in your browser. We never access your AI conversations.\n\n⭐ Take control of your AI chats — install AI Chat Manager free!",
+    "privacy": {
+      "single_purpose": "AI Chat Manager helps users organize, search, and export their ChatGPT and Claude conversations with folders, tags, and search.",
+      "permissions": {
+        "activeTab": "Required to read the ChatGPT and Claude chat interfaces to enable search, folder organization, and export features.",
+        "storage": "Required to save folder structures, tags, bookmarks, and user preferences locally."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  },
+  "amazon-seller-dash": {
+    "id": "plaoendgiokokjfchodcljcolpmnjeab",
+    "name": "Amazon Seller Dash",
+    "category": "Productivity",
+    "language": "English",
+    "description": "Amazon Seller Dashboard gives Amazon sellers real-time profit tracking, fee calculations, sales trends, and inventory alerts — all in one clean dashboard overlay.\n\n🔥 KEY FEATURES:\n\n✅ Real-Time Profit Tracking — See your true profit after Amazon fees, shipping, and COGS on every sale.\n\n✅ Fee Calculator — Instantly calculate Amazon referral fees, FBA fees, and storage fees for any product.\n\n✅ Sales Trends & Charts — Beautiful charts showing daily, weekly, and monthly sales trends.\n\n✅ Inventory Alerts — Get notified when stock is running low so you never miss a sale.\n\n✅ ASIN Lookup — Quick profit analysis for any ASIN directly from search results.\n\n💡 PERFECT FOR:\n• Amazon FBA sellers\n• Private label sellers tracking margins\n• Wholesale sellers comparing products\n• Anyone selling on Amazon\n\n🔒 PRIVACY FIRST: Your sales data stays local. We never transmit your Amazon seller information.\n\n⭐ Know your real profits — install Amazon Seller Dash free today!",
+    "privacy": {
+      "single_purpose": "Amazon Seller Dashboard helps Amazon sellers track profits, calculate fees, and monitor sales trends with a dashboard overlay.",
+      "permissions": {
+        "activeTab": "Required to read Amazon Seller Central pages to extract sales data, fees, and inventory information for the dashboard.",
+        "storage": "Required to save sales history, profit calculations, and user preferences locally."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  },
+  "yt-analytics-pro": {
+    "id": "lphnjkieihblmdkillbljcgpegoidceo",
+    "name": "YT Analytics Pro",
+    "category": "Productivity",
+    "language": "English",
+    "description": "YT Analytics Pro is the essential analytics toolkit for YouTube creators. Track real-time views, estimate revenue, analyze competitors, and optimize your upload schedule.\n\n🔥 KEY FEATURES:\n\n✅ Real-Time View Tracking — See live view counts and subscriber changes as they happen.\n\n✅ Revenue Estimator — Estimate earnings per video based on views, niche, and engagement rates.\n\n✅ Competitor Analysis — Compare your channel metrics against competitors in your niche.\n\n✅ Best Time to Upload — Data-driven suggestions for optimal upload times based on your audience.\n\n✅ Video Performance Score — Get a score for each video with tips to improve reach.\n\n💡 PERFECT FOR:\n• YouTube creators growing their channels\n• Content managers tracking performance\n• MCN networks monitoring creators\n• Anyone serious about YouTube growth\n\n🔒 PRIVACY FIRST: Your analytics data stays in your browser. We never access your YouTube account.\n\n⭐ Grow your YouTube channel — install YT Analytics Pro free!",
+    "privacy": {
+      "single_purpose": "YT Analytics Pro helps YouTube creators track video performance, estimate revenue, and analyze competitors with real-time analytics.",
+      "permissions": {
+        "activeTab": "Required to read YouTube Studio and video pages to extract view counts, engagement data, and analytics.",
+        "storage": "Required to save tracked videos, analytics history, and user preferences locally."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  },
+  "fb-marketplace-pro": {
+    "id": "kkbejefacbneecklchgiiepjjgiaogen",
+    "name": "FB Marketplace Pro",
+    "category": "Productivity",
+    "language": "English",
+    "description": "FB Marketplace Pro supercharges your Facebook Marketplace selling experience. Auto-relist expired listings, create bulk posts, track your sales, and use message templates for faster responses.\n\n🔥 KEY FEATURES:\n\n✅ One-Click Relist — Automatically renew expired or stale listings to keep them visible to buyers.\n\n✅ Bulk Listing Creator — Create multiple listings at once with templates and saved descriptions.\n\n✅ Sales Tracker — Track all your sales, revenue, and best-selling items in one dashboard.\n\n✅ Message Templates — Save and reuse common responses to buyer inquiries for faster communication.\n\n✅ Price History — Track price changes and see which price points work best.\n\n💡 PERFECT FOR:\n• Facebook Marketplace power sellers\n• Resellers and flippers\n• Small business owners\n• Anyone selling on FB Marketplace regularly\n\n🔒 PRIVACY FIRST: All data stays local on your device. We never access your Facebook account or messages.\n\n⭐ Sell more on Marketplace — install FB Marketplace Pro free today!",
+    "privacy": {
+      "single_purpose": "FB Marketplace Pro helps Facebook Marketplace sellers auto-relist listings, create bulk posts, and track sales with analytics.",
+      "permissions": {
+        "activeTab": "Required to interact with Facebook Marketplace pages to enable relisting, bulk posting, and sales tracking features.",
+        "storage": "Required to save listing templates, sales history, message templates, and user preferences locally."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  },
+  "shopify-power-tools": {
+    "id": "aifjbgdjkdfhahjlhbdkiaaeiofbbfao",
+    "name": "Shopify Power Tools",
+    "category": "Productivity",
+    "language": "English",
+    "description": "Shopify Power Tools adds bulk editing, quick actions, and analytics directly to your Shopify admin. Edit prices in bulk, quick-edit products, analyze orders, and optimize SEO.\n\n🔥 KEY FEATURES:\n\n✅ Bulk Price Editor — Change prices across multiple products at once with percentage or fixed amount adjustments.\n\n✅ Quick Product Edit — Edit product details inline without opening each product page.\n\n✅ Order Analytics — Track order trends, average order value, and customer lifetime value.\n\n✅ SEO Optimizer — Get SEO scores and suggestions for every product listing.\n\n✅ Inventory Dashboard — Visual overview of stock levels with low-stock alerts.\n\n💡 PERFECT FOR:\n• Shopify store owners\n• E-commerce managers handling large catalogs\n• Dropshippers managing multiple products\n• Anyone wanting faster Shopify workflows\n\n🔒 PRIVACY FIRST: All data processing happens locally in your browser. We never access your Shopify store data.\n\n⭐ Supercharge your Shopify store — install Shopify Power Tools free!",
+    "privacy": {
+      "single_purpose": "Shopify Power Tools adds bulk editing, quick actions, and analytics to the Shopify admin interface for faster store management.",
+      "permissions": {
+        "activeTab": "Required to read and modify Shopify admin pages to enable bulk editing, quick edit, and analytics features.",
+        "storage": "Required to save user preferences, edit history, and analytics data locally."
+      },
+      "remote_code": false,
+      "data_collection": [],
+      "privacy_policy_url": "https://jddavenport.github.io/relistpro-privacy/"
+    }
+  }
+}

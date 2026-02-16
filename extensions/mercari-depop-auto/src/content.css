@@ -1,0 +1,340 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   RelistPro — Injected UI Styles
+   Premium dark-theme components for Mercari page overlays
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --rp-primary: #6C5CE7;
+  --rp-primary-hover: #7E6FF0;
+  --rp-primary-active: #5A4BD6;
+  --rp-success: #00C853;
+  --rp-warning: #FFB300;
+  --rp-danger: #FF5252;
+  --rp-bg: #1A1A2E;
+  --rp-bg-card: #16213E;
+  --rp-bg-elevated: #0F3460;
+  --rp-text: #E8E8F0;
+  --rp-text-muted: #8B8BA3;
+  --rp-border: rgba(108, 92, 231, 0.25);
+  --rp-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --rp-radius: 12px;
+  --rp-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ── Relist Button ───────────────────────────────────────────────────────── */
+
+.rp-relist-btn {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--rp-primary), #a855f7);
+  color: #fff;
+  font-family: var(--rp-font);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--rp-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(108, 92, 231, 0.4);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  z-index: 9999;
+}
+
+.rp-relist-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(108, 92, 231, 0.6);
+  background: linear-gradient(135deg, var(--rp-primary-hover), #b87afc);
+}
+
+.rp-relist-btn:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, var(--rp-primary-active), #9333ea);
+}
+
+.rp-relist-btn.rp-loading {
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.rp-relist-btn .rp-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: rp-spin 0.6s linear infinite;
+}
+
+@keyframes rp-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Relist Button Container ─────────────────────────────────────────────── */
+
+.rp-relist-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--rp-bg);
+  border-radius: var(--rp-radius);
+  border: 1px solid var(--rp-border);
+}
+
+.rp-relist-container .rp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--rp-bg-elevated);
+  color: var(--rp-text-muted);
+  font-family: var(--rp-font);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Days Badge on Listing Cards ─────────────────────────────────────────── */
+
+.rp-days-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 4px 10px;
+  background: var(--rp-bg);
+  color: var(--rp-text);
+  font-family: var(--rp-font);
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--rp-border);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.rp-days-badge.rp-stale {
+  background: rgba(255, 82, 82, 0.9);
+  border-color: rgba(255, 82, 82, 0.5);
+}
+
+.rp-days-badge.rp-aging {
+  background: rgba(255, 179, 0, 0.9);
+  border-color: rgba(255, 179, 0, 0.5);
+  color: #1A1A2E;
+}
+
+.rp-days-badge.rp-fresh {
+  background: rgba(0, 200, 83, 0.9);
+  border-color: rgba(0, 200, 83, 0.5);
+  color: #1A1A2E;
+}
+
+/* ── Bulk Select Checkbox ────────────────────────────────────────────────── */
+
+.rp-checkbox-wrap {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 100;
+}
+
+.rp-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--rp-bg);
+  border: 2px solid var(--rp-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.rp-checkbox:hover {
+  border-color: var(--rp-primary);
+  background: var(--rp-bg-elevated);
+}
+
+.rp-checkbox:checked {
+  background: var(--rp-primary);
+  border-color: var(--rp-primary);
+}
+
+.rp-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ── Bulk Action Bar ─────────────────────────────────────────────────────── */
+
+.rp-bulk-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  background: var(--rp-bg);
+  border: 1px solid var(--rp-border);
+  border-radius: 16px;
+  box-shadow: var(--rp-shadow);
+  z-index: 99999;
+  font-family: var(--rp-font);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(12px);
+}
+
+.rp-bulk-bar.rp-visible {
+  transform: translateX(-50%) translateY(0);
+}
+
+.rp-bulk-bar .rp-count {
+  color: var(--rp-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rp-bulk-bar .rp-count span {
+  color: var(--rp-primary);
+}
+
+.rp-bulk-bar button {
+  all: unset;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-family: var(--rp-font);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rp-bulk-bar .rp-bulk-relist {
+  background: var(--rp-primary);
+  color: #fff;
+}
+
+.rp-bulk-bar .rp-bulk-relist:hover {
+  background: var(--rp-primary-hover);
+}
+
+.rp-bulk-bar .rp-bulk-relist:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rp-bulk-bar .rp-bulk-cancel {
+  color: var(--rp-text-muted);
+}
+
+.rp-bulk-bar .rp-bulk-cancel:hover {
+  color: var(--rp-text);
+}
+
+/* ── Toast Notifications ─────────────────────────────────────────────────── */
+
+.rp-toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.rp-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--rp-bg);
+  border-radius: var(--rp-radius);
+  border: 1px solid var(--rp-border);
+  box-shadow: var(--rp-shadow);
+  font-family: var(--rp-font);
+  font-size: 13px;
+  color: var(--rp-text);
+  pointer-events: auto;
+  animation: rp-slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 360px;
+  backdrop-filter: blur(12px);
+}
+
+.rp-toast.rp-toast-exit {
+  animation: rp-slideOut 0.25s ease forwards;
+}
+
+.rp-toast.rp-success { border-left: 3px solid var(--rp-success); }
+.rp-toast.rp-error   { border-left: 3px solid var(--rp-danger); }
+.rp-toast.rp-warning { border-left: 3px solid var(--rp-warning); }
+.rp-toast.rp-info    { border-left: 3px solid var(--rp-primary); }
+
+.rp-toast-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+@keyframes rp-slideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes rp-slideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(40px); }
+}
+
+/* ── Pro Upsell Badge ────────────────────────────────────────────────────── */
+
+.rp-pro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #1A1A2E;
+  font-family: var(--rp-font);
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Progress Bar ────────────────────────────────────────────────────────── */
+
+.rp-progress {
+  width: 100%;
+  height: 4px;
+  background: var(--rp-bg-elevated);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.rp-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--rp-primary), #a855f7);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}

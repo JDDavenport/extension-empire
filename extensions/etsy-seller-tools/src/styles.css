@@ -1,0 +1,157 @@
+/* Etsy Seller Power Tools — Content Script Styles */
+
+.espt-panel {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin: 16px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  font-size: 13px;
+  color: #222;
+  z-index: 9999;
+}
+.espt-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #F1641E, #D35400);
+  color: white;
+  cursor: pointer;
+}
+.espt-panel-logo { font-size: 18px; }
+.espt-panel-title { flex: 1; font-weight: 700; font-size: 14px; }
+.espt-panel-toggle {
+  background: none; border: none; color: white;
+  cursor: pointer; font-size: 12px; padding: 4px;
+}
+.espt-panel-body { padding: 16px; }
+
+/* Overall Score */
+.espt-overall-score {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; margin-bottom: 14px;
+  border: 2px solid; border-radius: 8px;
+  background: #fafafa;
+}
+.espt-score-number { font-size: 32px; font-weight: 800; }
+.espt-score-label { font-size: 14px; color: #666; }
+
+/* Tag List */
+.espt-tag-list { display: flex; flex-direction: column; gap: 8px; }
+.espt-tag-item {
+  display: grid; grid-template-columns: 1fr auto auto;
+  gap: 8px; align-items: center;
+  padding: 8px 12px; background: #f8f8f8;
+  border-radius: 6px;
+}
+.espt-tag-name { font-weight: 600; }
+.espt-tag-score { font-weight: 700; font-size: 14px; }
+.espt-tag-chars { font-size: 11px; color: #999; }
+.espt-tag-tip {
+  grid-column: 1 / -1;
+  font-size: 11px; color: #888;
+  border-top: 1px solid #eee; padding-top: 4px; margin-top: 2px;
+}
+
+/* Quality Score */
+.espt-quality-overview { text-align: center; margin-bottom: 16px; }
+.espt-quality-gauge {
+  display: inline-flex; align-items: baseline; gap: 4px;
+}
+.espt-gauge-number { font-size: 48px; font-weight: 800; color: #F1641E; }
+.espt-gauge-label { font-size: 18px; color: #999; }
+
+.espt-quality-row {
+  display: grid; grid-template-columns: 120px 1fr 40px;
+  gap: 8px; align-items: center; padding: 6px 0;
+}
+.espt-quality-category { display: flex; align-items: center; gap: 6px; font-weight: 500; }
+.espt-quality-icon { font-size: 16px; }
+.espt-quality-bar-wrap {
+  height: 8px; background: #eee; border-radius: 4px; overflow: hidden;
+}
+.espt-quality-bar { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+.espt-quality-val { font-weight: 700; text-align: right; font-size: 13px; }
+.espt-quality-tip {
+  grid-column: 1 / -1; font-size: 11px; color: #888;
+  padding: 0 0 8px 30px; border-bottom: 1px solid #f0f0f0;
+}
+
+/* Warning */
+.espt-warning {
+  background: #FFF3CD; border: 1px solid #FFD700;
+  border-radius: 6px; padding: 10px 14px;
+  margin-top: 12px; font-size: 12px; color: #856404;
+}
+
+/* Star Seller */
+.espt-star-metrics { display: flex; flex-direction: column; gap: 12px; }
+.espt-star-row {
+  display: grid; grid-template-columns: 1fr 150px auto;
+  gap: 8px; align-items: center;
+}
+.espt-progress-bar {
+  height: 10px; background: #eee; border-radius: 5px; overflow: hidden;
+}
+.espt-progress-fill { height: 100%; background: #22c55e; border-radius: 5px; }
+.espt-star-target { font-size: 11px; color: #888; }
+.espt-star-note { font-size: 11px; color: #999; margin-top: 4px; }
+
+/* Dashboard */
+.espt-dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.espt-dash-card {
+  background: #f8f8f8; border-radius: 8px; padding: 12px; text-align: center;
+}
+.espt-dash-label { font-size: 11px; color: #888; margin-bottom: 4px; }
+.espt-dash-value { font-size: 20px; font-weight: 700; color: #333; }
+.espt-dash-note { font-size: 11px; color: #999; margin-top: 8px; }
+
+/* Bulk Edit */
+.espt-bulk-btn {
+  background: linear-gradient(135deg, #F1641E, #D35400);
+  color: white; border: none; border-radius: 6px;
+  padding: 10px 20px; font-size: 14px; font-weight: 600;
+  cursor: pointer; margin-bottom: 12px;
+}
+.espt-bulk-btn:hover { opacity: 0.9; }
+
+/* Modal */
+.espt-modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5); z-index: 99999;
+  display: flex; align-items: center; justify-content: center;
+}
+.espt-modal {
+  background: white; border-radius: 12px; width: 500px; max-width: 90vw;
+  max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.espt-modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 20px; border-bottom: 1px solid #eee;
+}
+.espt-modal-header h3 { font-size: 16px; }
+.espt-modal-close {
+  background: none; border: none; font-size: 24px;
+  cursor: pointer; color: #999;
+}
+.espt-modal-body { padding: 20px; }
+.espt-bulk-section { margin-bottom: 14px; }
+.espt-bulk-section label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 13px; }
+.espt-input {
+  width: 100%; padding: 8px 12px; border: 1px solid #ddd;
+  border-radius: 6px; font-size: 13px;
+}
+.espt-input:focus { outline: none; border-color: #F1641E; }
+.espt-bulk-actions { display: flex; gap: 10px; margin-top: 16px; }
+.espt-btn {
+  padding: 8px 16px; border: none; border-radius: 6px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.espt-btn-primary { background: #F1641E; color: white; }
+.espt-btn-secondary { background: #eee; color: #333; }
+.espt-bulk-results { margin-top: 14px; }
+.espt-bulk-note { font-size: 11px; color: #999; margin-top: 12px; }
+.espt-info { color: #3b82f6; font-size: 12px; padding: 10px; background: #EFF6FF; border-radius: 6px; }

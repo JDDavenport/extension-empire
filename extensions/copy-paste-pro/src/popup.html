@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">📋</div>
+      <h1>Copy Paste Pro</h1>
+    </div>
+
+    <div class="status-card" id="statusCard">
+      <div class="status-row">
+        <div>
+          <div class="status-label">Protection Removal</div>
+          <div class="status-text" id="statusText">Disabled</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="toggleSwitch">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="info">
+      <p>Enables copy, paste, right-click, and text selection on the current page.</p>
+    </div>
+
+    <div class="shortcut">
+      <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> to toggle
+    </div>
+
+    <div class="footer">
+      <a href="#" id="upgradeLink" class="upgrade-link">⚡ Upgrade to Pro</a>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

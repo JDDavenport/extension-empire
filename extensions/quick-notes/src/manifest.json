@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Quick Notes — Sticky Notes for Any Page",
+  "version": "1.0.0",
+  "description": "Add floating sticky notes to any webpage. Notes auto-save per URL. Simple, fast, private.",
+  "permissions": ["activeTab", "storage"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

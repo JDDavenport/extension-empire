@@ -1,0 +1,14 @@
+property_address,type,units,purchase_price,current_value,mortgage_balance,monthly_piti,tenant_name,unit,monthly_rent,lease_start,lease_end,security_deposit,status
+"123 Oak Street",Single Family,1,285000,320000,228000,1650,John Smith,A,1800,2024-06-01,2025-05-31,1800,Active
+"456 Maple Ave Unit 1",Duplex,2,375000,410000,300000,2100,Sarah Johnson,1,1200,2024-03-01,2025-02-28,1200,Active
+"456 Maple Ave Unit 2",Duplex,2,375000,410000,300000,2100,Mike Chen,2,1250,2024-09-01,2025-08-31,1250,Active
+"789 Pine Road",Single Family,1,195000,225000,156000,1150,Emily Davis,A,1400,2024-01-15,2025-01-14,1400,Expiring Soon
+"321 Elm Court Unit A",Triplex,3,425000,480000,340000,2450,Robert Wilson,A,1100,2024-07-01,2025-06-30,1100,Active
+"321 Elm Court Unit B",Triplex,3,425000,480000,340000,2450,Lisa Park,B,1050,2024-04-01,2025-03-31,1050,Active
+"321 Elm Court Unit C",Triplex,3,425000,480000,340000,2450,,C,1100,,,,"Vacant"
+"555 Cedar Lane",Condo,1,180000,210000,144000,1350,David Brown,A,1500,2024-08-01,2025-07-31,1500,Active
+"777 Birch Blvd",Single Family,1,310000,345000,248000,1800,Jennifer Lee,A,2000,2024-02-01,2025-01-31,2000,Month-to-Month
+"999 Walnut Dr Unit 1",Fourplex,4,520000,580000,416000,3100,Tom Garcia,1,975,2024-05-01,2025-04-30,975,Active
+"999 Walnut Dr Unit 2",Fourplex,4,520000,580000,416000,3100,Amy Taylor,2,975,2024-10-01,2025-09-30,975,Active
+"999 Walnut Dr Unit 3",Fourplex,4,520000,580000,416000,3100,Chris Martin,3,1000,2024-06-01,2025-05-31,1000,Active
+"999 Walnut Dr Unit 4",Fourplex,4,520000,580000,416000,3100,Nina Patel,4,1000,2024-11-01,2025-10-31,1000,Active

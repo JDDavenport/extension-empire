@@ -1,0 +1,157 @@
+/* ===== WAPower Injected Styles ===== */
+
+/* --- Template Panel Toggle Button --- */
+.wap-tpl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  border: none;
+  background: none;
+  color: #8696a0;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: color .15s, background .15s;
+  flex-shrink: 0;
+}
+.wap-tpl-btn:hover { color: #00a884; background: rgba(0,168,132,.08); }
+.wap-tpl-btn.active { color: #00a884; }
+
+/* --- Template Floating Panel --- */
+.wap-tpl-panel {
+  position: absolute;
+  bottom: 56px;
+  right: 12px;
+  width: 280px;
+  background: #1f2c34;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.45);
+  z-index: 1000;
+  padding: 10px;
+  transform: scale(.92) translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .18s cubic-bezier(.4,0,.2,1), opacity .18s;
+}
+.wap-tpl-panel.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.wap-tpl-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 8px;
+  border-bottom: 1px solid #2a3942;
+  margin-bottom: 8px;
+}
+.wap-tpl-panel-header span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e9edef;
+}
+.wap-tpl-panel-header small {
+  font-size: 10px;
+  color: #8696a0;
+}
+
+/* Template row */
+.wap-tpl-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .12s;
+  margin-bottom: 2px;
+}
+.wap-tpl-row:hover { background: #2a3942; }
+.wap-tpl-row .shortcut {
+  font-size: 10px;
+  font-weight: 700;
+  color: #00a884;
+  min-width: 24px;
+}
+.wap-tpl-row .text {
+  font-size: 12px;
+  color: #d1d7db;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.wap-tpl-empty {
+  text-align: center;
+  color: #8696a0;
+  font-size: 11px;
+  padding: 14px 0;
+}
+
+/* --- Chat Label Dot --- */
+.wap-label-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: 6px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.2);
+}
+
+/* --- Label Picker --- */
+.wap-label-picker {
+  position: fixed;
+  background: #1f2c34;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.5);
+  z-index: 10000;
+  padding: 6px;
+  animation: wapFadeIn .15s ease;
+}
+@keyframes wapFadeIn { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1); } }
+
+.wap-label-opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #e9edef;
+  transition: background .1s;
+  white-space: nowrap;
+}
+.wap-label-opt:hover { background: #2a3942; }
+.wap-label-opt .dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.wap-label-opt.remove { color: #ef5350; }
+
+/* --- Toast --- */
+.wap-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #00a884;
+  color: #111b21;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 100000;
+  opacity: 0;
+  transition: opacity .2s, transform .2s;
+  pointer-events: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.wap-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

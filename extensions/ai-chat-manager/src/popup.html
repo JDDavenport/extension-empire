@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chat Manager</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="icons/icon48.png" alt="" width="24" height="24">
+        <h1>AI Chat Manager</h1>
+      </div>
+      <div class="header-right">
+        <span id="pro-badge" class="badge-pro" style="display:none;">PRO</span>
+        <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="search">🔍 Search</button>
+      <button class="tab" data-tab="folders">📁 Folders</button>
+      <button class="tab" data-tab="prompts">⚡ Prompts</button>
+      <button class="tab" data-tab="manage">🗂️ Manage</button>
+    </nav>
+
+    <!-- Search Tab -->
+    <section id="tab-search" class="tab-content active">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search all conversations..." />
+      </div>
+      <div id="search-results" class="list"></div>
+      <div id="pinned-section">
+        <h3>📌 Pinned</h3>
+        <div id="pinned-list" class="list"></div>
+      </div>
+      <div id="recent-section">
+        <h3>Recent</h3>
+        <div id="recent-list" class="list"></div>
+      </div>
+    </section>
+
+    <!-- Folders Tab -->
+    <section id="tab-folders" class="tab-content">
+      <div id="folders-pro-gate" class="pro-gate" style="display:none;">
+        <p>📁 Organize with folders — a Pro feature</p>
+        <button class="btn-upgrade" id="folders-upgrade">Upgrade to Pro</button>
+      </div>
+      <div id="folders-content">
+        <div class="add-row">
+          <input type="text" id="new-folder-name" placeholder="New folder name..." />
+          <button id="add-folder-btn" class="btn-small">+ Add</button>
+        </div>
+        <div id="folders-list" class="list"></div>
+      </div>
+    </section>
+
+    <!-- Prompts Tab -->
+    <section id="tab-prompts" class="tab-content">
+      <div id="prompts-pro-gate" class="pro-gate" style="display:none;">
+        <p>⚡ Prompt Library — a Pro feature</p>
+        <button class="btn-upgrade" id="prompts-upgrade">Upgrade to Pro</button>
+      </div>
+      <div id="prompts-content">
+        <div class="add-row">
+          <input type="text" id="new-prompt-name" placeholder="Prompt name..." />
+          <button id="add-prompt-btn" class="btn-small">+ Add</button>
+        </div>
+        <textarea id="new-prompt-text" placeholder="Paste your prompt here..." rows="3"></textarea>
+        <select id="new-prompt-category">
+          <option value="general">General</option>
+          <option value="coding">Coding</option>
+          <option value="writing">Writing</option>
+          <option value="analysis">Analysis</option>
+          <option value="creative">Creative</option>
+        </select>
+        <div id="prompts-list" class="list"></div>
+      </div>
+    </section>
+
+    <!-- Manage Tab -->
+    <section id="tab-manage" class="tab-content">
+      <div class="manage-actions">
+        <button id="bulk-select-btn" class="btn-secondary">☑️ Select Multiple</button>
+        <button id="bulk-delete-btn" class="btn-danger" style="display:none;">🗑️ Delete Selected</button>
+        <button id="export-all-btn" class="btn-secondary">📦 Export All (JSON)</button>
+      </div>
+      <div class="manage-filters">
+        <select id="filter-platform">
+          <option value="all">All Platforms</option>
+          <option value="chatgpt">ChatGPT</option>
+          <option value="claude">Claude</option>
+        </select>
+        <select id="filter-sort">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="alpha">A-Z</option>
+        </select>
+      </div>
+      <div id="manage-list" class="list"></div>
+      <div id="manage-stats" class="stats"></div>
+    </section>
+
+    <!-- Settings Panel (hidden) -->
+    <section id="settings-panel" class="tab-content" style="display:none;">
+      <h2>Settings</h2>
+      <div class="setting-item">
+        <label>Pro Status</label>
+        <span id="pro-status">Free</span>
+        <button id="upgrade-btn" class="btn-upgrade">Upgrade</button>
+      </div>
+      <div class="setting-item">
+        <label>Auto-index conversations</label>
+        <input type="checkbox" id="auto-index" checked>
+      </div>
+      <div class="setting-item">
+        <button id="clear-data-btn" class="btn-danger">Clear All Data</button>
+      </div>
+      <button id="back-btn" class="btn-text">← Back</button>
+    </section>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

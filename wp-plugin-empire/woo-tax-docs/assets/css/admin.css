@@ -1,0 +1,18 @@
+.wtd-wrap { max-width: 900px; }
+.wtd-pro-banner {
+	background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+	color: #fff;
+	padding: 20px 25px;
+	border-radius: 8px;
+	margin: 20px 0;
+}
+.wtd-pro-banner h3 { margin: 0 0 8px; color: #fff; }
+.wtd-pro-banner p { margin: 0 0 12px; opacity: 0.9; }
+.wtd-pro-banner .button-primary { background: #d63638; border-color: #d63638; }
+.wtd-invoice-badge {
+	background: #2271b1;
+	color: #fff;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+}

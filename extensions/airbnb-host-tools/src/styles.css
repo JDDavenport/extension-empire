@@ -1,0 +1,425 @@
+/* Airbnb Host Power Tools — Styles */
+
+/* ─── Variables ──────────────────────────────────────────────────── */
+:root {
+  --ahpt-primary: #FF5A5F;
+  --ahpt-primary-dark: #E04347;
+  --ahpt-bg: #ffffff;
+  --ahpt-bg-subtle: #f7f7f7;
+  --ahpt-text: #222222;
+  --ahpt-text-muted: #717171;
+  --ahpt-border: #DDDDDD;
+  --ahpt-success: #008A05;
+  --ahpt-warning: #C13515;
+  --ahpt-pro-gradient: linear-gradient(135deg, #FF5A5F, #FF8C00);
+  --ahpt-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  --ahpt-radius: 12px;
+  --ahpt-font: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ─── Panel Base ─────────────────────────────────────────────────── */
+.ahpt-panel {
+  background: var(--ahpt-bg);
+  border: 1px solid var(--ahpt-border);
+  border-radius: var(--ahpt-radius);
+  box-shadow: var(--ahpt-shadow);
+  font-family: var(--ahpt-font);
+  color: var(--ahpt-text);
+  overflow: hidden;
+}
+
+.ahpt-panel-inline {
+  margin: 16px 24px;
+}
+
+.ahpt-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--ahpt-bg-subtle);
+  border-bottom: 1px solid var(--ahpt-border);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ahpt-panel-header .ahpt-logo {
+  font-size: 18px;
+}
+
+.ahpt-panel-header .ahpt-title {
+  flex: 1;
+}
+
+.ahpt-minimize {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--ahpt-text-muted);
+  padding: 0 4px;
+  line-height: 1;
+}
+.ahpt-minimize:hover { color: var(--ahpt-text); }
+
+.ahpt-panel-body {
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.ahpt-panel-body.ahpt-collapsed {
+  display: none;
+}
+
+/* ─── Dashboard Overlay ──────────────────────────────────────────── */
+.ahpt-dashboard-overlay {
+  position: fixed;
+  top: 80px;
+  right: 16px;
+  z-index: 9999;
+  width: 320px;
+}
+
+.ahpt-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ahpt-stat-card {
+  background: var(--ahpt-bg-subtle);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.ahpt-stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ahpt-text);
+}
+
+.ahpt-stat-value.ahpt-pro {
+  background: var(--ahpt-pro-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ahpt-stat-label {
+  font-size: 11px;
+  color: var(--ahpt-text-muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ahpt-quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────── */
+.ahpt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: 1px solid var(--ahpt-border);
+  border-radius: 8px;
+  background: var(--ahpt-bg);
+  color: var(--ahpt-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--ahpt-font);
+}
+
+.ahpt-btn:hover {
+  background: var(--ahpt-bg-subtle);
+  border-color: var(--ahpt-text);
+}
+
+.ahpt-btn-primary {
+  background: var(--ahpt-primary);
+  color: white;
+  border-color: var(--ahpt-primary);
+}
+.ahpt-btn-primary:hover {
+  background: var(--ahpt-primary-dark);
+  border-color: var(--ahpt-primary-dark);
+}
+
+.ahpt-btn-upgrade {
+  background: var(--ahpt-pro-gradient);
+  color: white;
+  border: none;
+}
+.ahpt-btn-upgrade:hover {
+  opacity: 0.9;
+  filter: brightness(1.05);
+}
+
+.ahpt-btn-sm {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* ─── Inbox Toolbar ──────────────────────────────────────────────── */
+.ahpt-inbox-toolbar {
+  margin: 8px 0;
+  padding: 10px 12px;
+  background: var(--ahpt-bg-subtle);
+  border: 1px solid var(--ahpt-border);
+  border-radius: 8px;
+}
+
+.ahpt-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ahpt-toolbar-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ahpt-text-muted);
+  white-space: nowrap;
+}
+
+.ahpt-template-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.ahpt-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  background: white;
+  border: 1px solid var(--ahpt-border);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: var(--ahpt-text);
+  font-family: var(--ahpt-font);
+}
+.ahpt-chip:hover {
+  border-color: var(--ahpt-primary);
+  color: var(--ahpt-primary);
+  background: #FFF5F5;
+}
+
+.ahpt-chip-pro {
+  background: var(--ahpt-pro-gradient);
+  color: white;
+  border: none;
+}
+.ahpt-chip-pro:hover {
+  opacity: 0.9;
+}
+
+/* ─── Review Cards ───────────────────────────────────────────────── */
+.ahpt-review-card {
+  border: 1px solid var(--ahpt-border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.ahpt-review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.ahpt-review-card-body {
+  font-size: 13px;
+  color: var(--ahpt-text-muted);
+  line-height: 1.5;
+}
+
+.ahpt-template-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ahpt-pro-banner {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #FFF5F0, #FFF0F0);
+  border-radius: 8px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.ahpt-pro-banner a {
+  color: var(--ahpt-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.ahpt-pro-banner a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Pricing ────────────────────────────────────────────────────── */
+.ahpt-pricing-form {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.ahpt-pricing-form label {
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ahpt-input-sm {
+  padding: 8px 10px;
+  border: 1px solid var(--ahpt-border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: var(--ahpt-font);
+  width: 80px;
+}
+
+.ahpt-input-wide {
+  width: 180px;
+}
+
+.ahpt-input-sm:focus {
+  outline: none;
+  border-color: var(--ahpt-primary);
+  box-shadow: 0 0 0 2px rgba(255,90,95,0.2);
+}
+
+.ahpt-comp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ahpt-comp-card {
+  background: var(--ahpt-bg-subtle);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.ahpt-comp-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ahpt-comp-label {
+  font-size: 11px;
+  color: var(--ahpt-text-muted);
+  margin-top: 4px;
+}
+
+.ahpt-comp-advice {
+  font-size: 13px;
+  padding: 10px 14px;
+  background: #F0F9FF;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
+.ahpt-loading {
+  text-align: center;
+  color: var(--ahpt-text-muted);
+  padding: 20px;
+}
+
+.ahpt-error {
+  color: var(--ahpt-warning);
+  text-align: center;
+  padding: 10px;
+}
+
+/* ─── Calendar Insights ──────────────────────────────────────────── */
+.ahpt-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--ahpt-border);
+}
+
+.ahpt-insight:last-child {
+  border-bottom: none;
+}
+
+.ahpt-insight-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ahpt-insight-warning { color: var(--ahpt-warning); }
+.ahpt-insight-tip { color: var(--ahpt-success); }
+
+/* ─── Upsell ─────────────────────────────────────────────────────── */
+.ahpt-panel-upsell {
+  background: linear-gradient(135deg, #FFF5F0, #FFF0F5);
+  border: 2px solid var(--ahpt-primary);
+}
+
+.ahpt-upsell-content {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.ahpt-upsell-content h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.ahpt-upsell-content p {
+  font-size: 14px;
+  color: var(--ahpt-text-muted);
+  margin: 0 0 16px;
+}
+
+/* ─── Toast ──────────────────────────────────────────────────────── */
+.ahpt-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--ahpt-text);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--ahpt-font);
+  z-index: 99999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.ahpt-toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

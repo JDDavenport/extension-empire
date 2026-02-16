@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 280px; font-family: -apple-system, system-ui, sans-serif; background: #fafafa; }
+.header { background: linear-gradient(135deg, #4CAF50, #2E7D32); color: #fff; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 15px; }
+.pro-btn { background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.4); color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; }
+.content { padding: 16px; }
+.stat { text-align: center; margin-bottom: 16px; }
+.stat .big { font-size: 32px; font-weight: 700; color: #4CAF50; }
+.stat .label { font-size: 12px; color: #888; margin-top: 4px; }
+.btn { width: 100%; padding: 10px; background: #4CAF50; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.btn:hover { background: #2E7D32; }
+.setting { margin-top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #555; }
+.setting input { width: 60px; padding: 4px; border: 1px solid #ddd; border-radius: 4px; text-align: center; }
+</style>
+</head><body>
+<div class="header"><h1>⏱️ Reading Time</h1><button class="pro-btn" id="proBtn">⭐ Pro</button></div>
+<div class="content">
+  <div class="stat"><div class="big" id="time">—</div><div class="label" id="words"></div></div>
+  <button class="btn" id="analyzeBtn">📖 Analyze This Page</button>
+  <div class="setting"><span>Reading speed (WPM):</span><input id="wpm" type="number" value="238" min="100" max="1000"></div>
+</div>
+<script src="ExtPay.js"></script>
+<script src="popup.js"></script>
+</body></html>

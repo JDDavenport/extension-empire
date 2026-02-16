@@ -1,0 +1,181 @@
+/* FB Marketplace Pro — Content Styles */
+#fbmp-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #0866ff, #00a4ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(8, 102, 255, 0.4);
+  z-index: 99999;
+  transition: transform 0.2s;
+}
+#fbmp-fab:hover { transform: scale(1.1); }
+
+#fbmp-panel {
+  position: fixed;
+  bottom: 88px;
+  right: 24px;
+  width: 380px;
+  max-height: 80vh;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 99999;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  color: #1c1e21;
+}
+
+.fbmp-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #0866ff, #00a4ff);
+  color: #fff;
+  border-radius: 16px 16px 0 0;
+  position: sticky;
+  top: 0;
+}
+.fbmp-panel-header h3 { margin: 0; font-size: 16px; font-weight: 700; }
+.fbmp-close { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; padding: 0; }
+
+.fbmp-pro-badge {
+  background: #ffd700;
+  color: #333;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.fbmp-free-badge {
+  background: #e4e6eb;
+  color: #65676b;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.fbmp-panel-body { padding: 12px 20px 20px; }
+
+.fbmp-section {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e4e6eb;
+}
+.fbmp-section:last-child { border-bottom: none; }
+.fbmp-section h4 { margin: 0 0 10px; font-size: 13px; color: #65676b; font-weight: 600; }
+
+.fbmp-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e4e6eb;
+  border-radius: 8px;
+  background: #f0f2f5;
+  color: #1c1e21;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 6px;
+  transition: background 0.15s;
+}
+.fbmp-btn:hover:not(:disabled) { background: #e4e6eb; }
+.fbmp-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.fbmp-btn-primary { background: #0866ff; color: #fff; border-color: #0866ff; }
+.fbmp-btn-primary:hover:not(:disabled) { background: #0756d4; }
+.fbmp-btn-sm { display: inline-block; width: auto; padding: 6px 12px; font-size: 12px; margin-top: 6px; }
+.fbmp-btn-upgrade { background: linear-gradient(135deg, #ffd700, #ffaa00); color: #333; border: none; font-weight: 700; text-align: center; }
+
+.fbmp-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+.fbmp-textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: monospace;
+  margin: 4px 0;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.fbmp-result { padding: 6px 0; font-size: 13px; line-height: 1.4; }
+
+.fbmp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+.fbmp-stat {
+  text-align: center;
+  background: #f0f2f5;
+  padding: 10px 6px;
+  border-radius: 8px;
+}
+.fbmp-stat strong { display: block; font-size: 18px; color: #0866ff; }
+.fbmp-stat small { font-size: 11px; color: #65676b; }
+
+.fbmp-crosspost-box { margin: 8px 0; }
+.fbmp-crosspost-box strong { font-size: 12px; color: #65676b; }
+
+.fbmp-upgrade { margin-top: 12px; }
+
+.fbmp-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #0866ff;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 999999;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  animation: fbmp-slide-in 0.3s ease;
+}
+@keyframes fbmp-slide-in { from { transform: translateX(100px); opacity: 0; } }
+
+.fbmp-msg-templates {
+  display: flex;
+  gap: 6px;
+  padding: 6px 0;
+  flex-wrap: wrap;
+}
+.fbmp-msg-btn {
+  background: #e7f3ff;
+  color: #0866ff;
+  border: 1px solid #0866ff33;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fbmp-msg-btn:hover { background: #d2e8ff; }
+
+.fbmp-form { margin-top: 8px; }

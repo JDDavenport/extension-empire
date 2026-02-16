@@ -1,0 +1,406 @@
+/* eBay Seller Analytics — Content Script Styles */
+
+/* ─── Dashboard Overlay ─── */
+.esa-dashboard {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #e2e8f0;
+}
+
+.esa-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.esa-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.esa-badge {
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.esa-pro { background: #fbbf24; color: #1e1b4b; }
+.esa-free { background: rgba(255,255,255,0.15); color: #94a3b8; }
+
+.esa-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.esa-stat-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.esa-stat-label {
+  font-size: 11px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.esa-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.esa-stat-sub {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.esa-stat-profit {
+  font-size: 12px;
+  color: #4ade80;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.esa-upgrade-link {
+  color: #fbbf24;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.esa-upgrade-link:hover { text-decoration: underline; }
+
+.esa-chart-container {
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.esa-chart-title {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ─── Velocity Widget ─── */
+.esa-velocity-widget {
+  background: linear-gradient(135deg, #0f172a, #1e1b4b);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #e2e8f0;
+}
+
+.esa-widget-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.esa-velocity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.esa-vel-item { text-align: center; }
+.esa-vel-num { display: block; font-size: 22px; font-weight: 700; color: #f8fafc; }
+.esa-vel-label { display: block; font-size: 11px; color: #64748b; }
+
+.esa-trend-up { color: #4ade80; font-size: 12px; font-weight: 600; }
+.esa-trend-down { color: #f87171; font-size: 12px; font-weight: 600; }
+.esa-trend-flat { color: #94a3b8; font-size: 12px; }
+
+/* ─── Quality Badge ─── */
+.esa-quality-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 8px;
+  vertical-align: middle;
+  cursor: help;
+}
+
+.esa-grade { font-size: 13px; }
+.esa-score { font-size: 10px; opacity: 0.8; }
+
+.esa-grade-A { background: #166534; color: #4ade80; }
+.esa-grade-B { background: #365314; color: #a3e635; }
+.esa-grade-C { background: #713f12; color: #fbbf24; }
+.esa-grade-D { background: #7c2d12; color: #fb923c; }
+.esa-grade-F { background: #7f1d1d; color: #f87171; }
+
+/* ─── Profit Inline ─── */
+.esa-profit-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.esa-profit-pos { background: rgba(34,197,94,0.1); color: #4ade80; }
+.esa-profit-neg { background: rgba(239,68,68,0.1); color: #f87171; }
+
+.esa-profit-label { color: #64748b; font-size: 11px; }
+.esa-profit-amount { font-weight: 700; }
+.esa-profit-margin { font-size: 10px; opacity: 0.7; }
+
+.esa-edit-cog {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 2px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.esa-edit-cog:hover { opacity: 1; }
+
+/* ─── COG Editor ─── */
+.esa-cog-editor {
+  position: absolute;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 14px;
+  z-index: 10000;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  color: #e2e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-width: 220px;
+}
+
+.esa-cog-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #f8fafc;
+}
+
+.esa-cog-editor label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: #94a3b8;
+}
+
+.esa-cog-editor input {
+  width: 100px;
+  padding: 4px 8px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.esa-cog-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* ─── Listing Page Panel ─── */
+.esa-listing-panel {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #e2e8f0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+}
+
+.esa-panel-header {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #f8fafc;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.esa-section { margin-bottom: 16px; }
+.esa-section-title {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.esa-score-display {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.esa-score-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.esa-big-grade { font-size: 24px; font-weight: 800; line-height: 1; }
+.esa-big-score { font-size: 10px; opacity: 0.8; }
+
+.esa-score-breakdown { flex: 1; }
+
+.esa-breakdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.esa-breakdown-label { width: 80px; color: #94a3b8; flex-shrink: 0; }
+.esa-breakdown-bar {
+  flex: 1;
+  height: 6px;
+  background: #1e293b;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.esa-breakdown-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #7c3aed);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.esa-breakdown-val { font-size: 10px; color: #64748b; width: 30px; text-align: right; }
+
+.esa-tips { margin-top: 10px; }
+.esa-tip {
+  font-size: 11px;
+  color: #94a3b8;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* ─── Profit Table ─── */
+.esa-profit-table {
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.esa-profit-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.esa-profit-row.esa-fee { color: #94a3b8; }
+.esa-profit-row.esa-total { font-weight: 700; font-size: 14px; background: rgba(255,255,255,0.03); }
+.esa-profit-row.esa-total.esa-profit-pos { color: #4ade80; }
+.esa-profit-row.esa-total.esa-profit-neg { color: #f87171; }
+
+/* ─── Buttons ─── */
+.esa-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.esa-btn:hover { background: #334155; }
+.esa-btn-primary { background: linear-gradient(135deg, #3b82f6, #7c3aed); border: none; color: #fff; }
+.esa-btn-primary:hover { opacity: 0.9; }
+.esa-btn-sm { padding: 4px 10px; font-size: 11px; }
+.esa-btn-full { width: 100%; text-align: center; padding: 10px; }
+
+/* ─── Bulk Actions Bar ─── */
+.esa-bulk-bar {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #e2e8f0;
+}
+
+.esa-bulk-title { font-weight: 700; font-size: 13px; margin-right: 8px; }
+
+.esa-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #94a3b8;
+}
+
+.esa-item-check {
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+/* ─── Search Tracking Button ─── */
+.esa-track-btn {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #3b82f6;
+  background: transparent;
+  color: #3b82f6;
+  font-size: 11px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: all 0.2s;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.esa-track-btn:hover { background: #3b82f6; color: #fff; }
+.esa-track-btn:disabled { opacity: 0.5; cursor: default; }

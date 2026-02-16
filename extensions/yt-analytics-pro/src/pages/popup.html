@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 320px;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #e4e4e4;
+    }
+    .header {
+      background: linear-gradient(135deg, #16213e, #0f3460);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .header h1 {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .header p {
+      font-size: 12px;
+      color: #9a9ab0;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00c853;
+    }
+    .status-dot.inactive { background: #666; }
+    .content { padding: 16px; }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .feature-icon { font-size: 20px; }
+    .feature-info { flex: 1; }
+    .feature-name { font-size: 13px; font-weight: 600; color: #fff; }
+    .feature-desc { font-size: 11px; color: #9a9ab0; }
+    .badge {
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-free { background: rgba(0,200,83,0.2); color: #00c853; }
+    .badge-pro { background: rgba(233,69,96,0.2); color: #e94560; }
+    .pro-banner {
+      margin: 16px 0 8px;
+      padding: 16px;
+      background: linear-gradient(135deg, #e94560, #ff6b6b);
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .pro-banner h3 { color: #fff; font-size: 15px; margin-bottom: 4px; }
+    .pro-banner p { color: rgba(255,255,255,0.85); font-size: 12px; }
+    .pro-banner.active {
+      background: linear-gradient(135deg, #00c853, #00e676);
+    }
+    .footer {
+      padding: 12px 16px;
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .footer a { color: #2979ff; text-decoration: none; }
+    .nav-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      background: #0f3460;
+      color: #e4e4e4;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      font-size: 13px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .nav-btn:hover { background: #16213e; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>📊 YT Analytics Pro</h1>
+    <p>YouTube Creator Toolkit</p>
+    <div class="status">
+      <div class="status-dot" id="status-dot"></div>
+      <span id="status-text">Checking...</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="feature">
+      <div class="feature-icon">📈</div>
+      <div class="feature-info">
+        <div class="feature-name">Analytics Overlay</div>
+        <div class="feature-desc">Real-time stats on Studio dashboard</div>
+      </div>
+      <span class="badge badge-free">Free</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💬</div>
+      <div class="feature-info">
+        <div class="feature-name">Sentiment Analysis</div>
+        <div class="feature-desc">Comment breakdown: pos/neg/questions</div>
+      </div>
+      <span class="badge badge-free">Free</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🏷️</div>
+      <div class="feature-info">
+        <div class="feature-name">Tag Optimizer</div>
+        <div class="feature-desc">High-traffic tag suggestions</div>
+      </div>
+      <span class="badge badge-free">Free</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💰</div>
+      <div class="feature-info">
+        <div class="feature-name">Revenue Estimator</div>
+        <div class="feature-desc">Per-video earnings by niche CPM</div>
+      </div>
+      <span class="badge badge-free">Free</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔮</div>
+      <div class="feature-info">
+        <div class="feature-name">Performance Predictor</div>
+        <div class="feature-desc">Predict views from first-hour data</div>
+      </div>
+      <span class="badge badge-pro">Pro</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🖼️</div>
+      <div class="feature-info">
+        <div class="feature-name">Thumbnail A/B Test</div>
+        <div class="feature-desc">Track CTR across variants</div>
+      </div>
+      <span class="badge badge-pro">Pro</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⏰</div>
+      <div class="feature-info">
+        <div class="feature-name">Best Upload Time</div>
+        <div class="feature-desc">Audience activity heatmap</div>
+      </div>
+      <span class="badge badge-pro">Pro</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🏆</div>
+      <div class="feature-info">
+        <div class="feature-name">Competitor Tracker</div>
+        <div class="feature-desc">Track up to 10 rival channels</div>
+      </div>
+      <span class="badge badge-pro">Pro</span>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📝</div>
+      <div class="feature-info">
+        <div class="feature-name">Bulk Description Editor</div>
+        <div class="feature-desc">Template-based mass editing</div>
+      </div>
+      <span class="badge badge-pro">Pro</span>
+    </div>
+
+    <div class="pro-banner" id="pro-banner">
+      <h3>⚡ Upgrade to Pro</h3>
+      <p>Unlock all features — $12.99/mo</p>
+    </div>
+
+    <button class="nav-btn" id="open-studio">Open YouTube Studio →</button>
+  </div>
+
+  <div class="footer">
+    <a href="https://extensionpay.com/ext/yt-analytics-pro" target="_blank">Manage Subscription</a> · v1.0.0
+  </div>
+
+  <script src="../lib/ExtPay.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

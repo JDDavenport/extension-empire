@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 260px; font-family: -apple-system, system-ui, sans-serif; background: #1a1a2e; color: #eee; }
+.header { padding: 16px; text-align: center; }
+.header h1 { font-size: 16px; margin-bottom: 4px; }
+.header .sub { font-size: 11px; color: #888; }
+.toggle-area { text-align: center; padding: 20px; }
+.toggle-btn { width: 80px; height: 80px; border-radius: 50%; border: 3px solid #333; background: #16213e; cursor: pointer; font-size: 32px; transition: all .2s; display: inline-flex; align-items: center; justify-content: center; }
+.toggle-btn.on { background: #e94560; border-color: #e94560; box-shadow: 0 0 20px rgba(233,69,96,.4); }
+.status { margin-top: 10px; font-size: 12px; color: #888; }
+.shortcut { text-align: center; font-size: 11px; color: #555; padding: 8px; }
+.shortcut kbd { background: #333; padding: 2px 6px; border-radius: 3px; color: #aaa; }
+.footer { text-align: center; padding: 10px; border-top: 1px solid #222; }
+.pro-btn { background: rgba(233,69,96,.2); border: 1px solid #e94560; color: #e94560; padding: 6px 16px; border-radius: 16px; font-size: 11px; cursor: pointer; }
+</style>
+</head><body>
+<div class="header"><h1>🌙 Dark Mode Toggle</h1><div class="sub">One-click dark mode for any site</div></div>
+<div class="toggle-area">
+  <button class="toggle-btn" id="toggleBtn">🌙</button>
+  <div class="status" id="status">OFF</div>
+</div>
+<div class="shortcut">Shortcut: <kbd>Alt</kbd> + <kbd>D</kbd></div>
+<div class="footer"><button class="pro-btn" id="proBtn">⭐ Upgrade to Pro</button></div>
+<script src="ExtPay.js"></script>
+<script src="popup.js"></script>
+</body></html>

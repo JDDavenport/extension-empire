@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok Shop Seller Tools — Analytics, Auto-Reply & Inventory",
+  "version": "1.0.0",
+  "description": "All-in-one TikTok Shop seller toolkit: real-time dashboard, quick reply templates, inventory alerts, order CSV export & competitor price tracking.",
+  "permissions": ["storage", "activeTab", "alarms", "notifications"],
+  "host_permissions": ["*://*.tiktok.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://seller-us.tiktok.com/*"],
+      "js": ["content.js"],
+      "css": [],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

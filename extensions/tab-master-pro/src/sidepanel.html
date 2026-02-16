@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { width: 100%; min-height: 100vh; max-height: none; }
+    .panel { max-height: calc(100vh - 120px); }
+  </style>
+</head>
+<body>
+  <!-- Reuse popup structure -->
+  <div class="header">
+    <h1><span class="logo">⚡</span> Tab Master Pro</h1>
+    <span class="ram-badge" id="ramBadge">0 MB saved</span>
+  </div>
+  <div class="nav">
+    <button class="active" data-panel="sessions">📁 Sessions</button>
+    <button data-panel="tabs">🔍 Tabs</button>
+    <button data-panel="suspend">💤 Suspend</button>
+    <button data-panel="dupes">🔄 Dupes</button>
+    <button data-panel="timeline">📊 Timeline</button>
+    <button data-panel="pro">⭐ Pro</button>
+  </div>
+  <div class="panel active" id="panel-sessions">
+    <div class="save-bar">
+      <input type="text" id="sessionName" placeholder="Session name...">
+      <button class="btn btn-primary" id="saveBtn">💾 Save</button>
+    </div>
+    <div id="sessionList"></div>
+  </div>
+  <div class="panel" id="panel-tabs">
+    <div class="search-bar" style="padding:0;margin-bottom:8px;">
+      <input type="text" id="tabSearch" placeholder="Search all tabs...">
+    </div>
+    <div id="tabList"></div>
+  </div>
+  <div class="panel" id="panel-suspend">
+    <div class="stats">
+      <div class="stat"><div class="stat-value" id="suspendCount">0</div><div class="stat-label">Tabs Suspended</div></div>
+      <div class="stat"><div class="stat-value" id="ramSaved">0 MB</div><div class="stat-label">RAM Saved</div></div>
+    </div>
+    <button class="btn btn-primary btn-block" id="suspendBtn">💤 Suspend Inactive Tabs</button>
+    <div style="margin-top:10px;">
+      <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);cursor:pointer;">
+        <input type="checkbox" id="autoSuspendToggle"> Auto-suspend after 30 min
+      </label>
+    </div>
+  </div>
+  <div class="panel" id="panel-dupes">
+    <button class="btn btn-primary btn-block" id="closeDupesBtn" style="margin-bottom:10px;">🗑️ Close All Duplicates</button>
+    <div id="dupeList"></div>
+  </div>
+  <div class="panel" id="panel-timeline"><div id="timelineList"></div></div>
+  <div class="panel" id="panel-pro">
+    <div class="pro-banner" id="proBanner">
+      <h3>⭐ Upgrade to Pro</h3>
+      <p>$4.99/mo for sync, auto-group, scheduling.</p>
+      <button class="btn btn-pro" id="upgradeBtn">Upgrade Now</button>
+    </div>
+    <div id="proFeatures" style="display:none;">
+      <button class="btn btn-secondary btn-block" id="autoGroupBtn" style="margin-bottom:6px;">🎨 Auto-Group by Domain</button>
+      <div style="margin-top:10px;">
+        <h3 style="font-size:13px;margin-bottom:8px;">⏰ Scheduled Sessions</h3>
+        <div style="display:flex;gap:6px;margin-bottom:8px;">
+          <select id="schedSessionSelect" style="flex:1;padding:6px;background:var(--bg2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);color:var(--text);font-size:12px;"></select>
+          <input type="time" id="schedTime" style="padding:6px;background:var(--bg2);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);color:var(--text);font-size:12px;">
+          <button class="btn btn-primary btn-small" id="addScheduleBtn">Add</button>
+        </div>
+        <div id="scheduleList"></div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

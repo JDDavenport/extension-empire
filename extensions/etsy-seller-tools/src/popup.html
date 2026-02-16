@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etsy Seller Power Tools</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-brand">
+        <img src="icons/icon48.png" alt="" class="header-icon">
+        <div>
+          <h1>Etsy Power Tools</h1>
+          <span class="header-badge" id="plan-badge">Free</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="keywords">🔍 Keywords</button>
+      <button class="tab" data-tab="competitor">🕵️ Spy</button>
+      <button class="tab" data-tab="templates">💬 Templates</button>
+      <button class="tab" data-tab="settings">⚙️ Settings</button>
+    </nav>
+
+    <!-- Keyword Research -->
+    <section id="tab-keywords" class="tab-content active">
+      <div class="section">
+        <label class="label">Enter keywords (one per line)</label>
+        <textarea id="keyword-input" class="textarea" rows="4" placeholder="handmade jewelry&#10;personalized gift&#10;vintage ring"></textarea>
+        <button id="keyword-analyze" class="btn btn-primary">Analyze Keywords</button>
+        <div id="keyword-results" class="results"></div>
+      </div>
+      <div id="keyword-pro-gate" class="pro-gate" style="display:none">
+        <p>🔒 Keyword Research is a Pro feature</p>
+        <button class="btn btn-upgrade" id="upgrade-keywords">Upgrade — $14.99/mo</button>
+      </div>
+    </section>
+
+    <!-- Competitor Spy -->
+    <section id="tab-competitor" class="tab-content">
+      <div class="section">
+        <label class="label">Shop name or URL</label>
+        <input type="text" id="competitor-input" class="input" placeholder="e.g. CraftHouseDesigns">
+        <button id="competitor-search" class="btn btn-primary">Analyze Shop</button>
+        <div id="competitor-remaining" class="remaining-text"></div>
+        <div id="competitor-results" class="results"></div>
+      </div>
+    </section>
+
+    <!-- Review Templates -->
+    <section id="tab-templates" class="tab-content">
+      <div class="section">
+        <div id="templates-list" class="templates-list"></div>
+        <button id="add-template" class="btn btn-secondary">+ Add Template</button>
+        <div id="template-pro-gate" class="pro-gate" style="display:none">
+          <p>🔒 Custom templates require Pro</p>
+          <button class="btn btn-upgrade" id="upgrade-templates">Upgrade — $14.99/mo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Settings -->
+    <section id="tab-settings" class="tab-content">
+      <div class="section">
+        <div class="setting-row">
+          <label>
+            <input type="checkbox" id="setting-notifications" checked>
+            Renewal notifications
+          </label>
+        </div>
+        <div class="setting-row">
+          <label>Alert days before renewal</label>
+          <select id="setting-renewal-days" class="select">
+            <option value="3">3 days</option>
+            <option value="7" selected>7 days</option>
+            <option value="14">14 days</option>
+          </select>
+        </div>
+        <hr>
+        <div class="setting-row">
+          <button id="save-settings" class="btn btn-primary">Save Settings</button>
+        </div>
+        <hr>
+        <div class="plan-info">
+          <p id="plan-status">Plan: Free</p>
+          <button id="upgrade-btn" class="btn btn-upgrade">Upgrade to Pro — $14.99/mo</button>
+          <p class="plan-desc">Unlimited competitor lookups, keyword research, bulk tag editing, and more.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="lib/ExtPay.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

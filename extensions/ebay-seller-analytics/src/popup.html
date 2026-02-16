@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 380px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; }
+    .header { background: linear-gradient(135deg, #1e40af, #7c3aed); padding: 16px; display: flex; align-items: center; gap: 10px; }
+    .header img { width: 32px; height: 32px; border-radius: 6px; }
+    .header h1 { font-size: 15px; font-weight: 700; color: #fff; }
+    .header .badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 700; }
+    .badge-pro { background: #fbbf24; color: #1e1b4b; }
+    .badge-free { background: rgba(255,255,255,0.2); color: #fff; }
+
+    .tabs { display: flex; border-bottom: 1px solid #1e293b; }
+    .tab { flex: 1; padding: 10px; text-align: center; font-size: 12px; cursor: pointer; color: #94a3b8; border-bottom: 2px solid transparent; transition: all 0.2s; }
+    .tab.active { color: #60a5fa; border-bottom-color: #60a5fa; }
+    .tab:hover { color: #e2e8f0; background: rgba(255,255,255,0.03); }
+
+    .tab-content { display: none; padding: 16px; max-height: 450px; overflow-y: auto; }
+    .tab-content.active { display: block; }
+
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .stat-card { background: #1e293b; border-radius: 10px; padding: 12px; }
+    .stat-label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-value { font-size: 22px; font-weight: 700; color: #f8fafc; margin: 4px 0; }
+    .stat-sub { font-size: 11px; color: #94a3b8; }
+    .stat-sub.positive { color: #4ade80; }
+    .stat-sub.negative { color: #f87171; }
+
+    .section { margin-bottom: 16px; }
+    .section-title { font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+
+    .chart-container { background: #1e293b; border-radius: 10px; padding: 12px; margin-bottom: 16px; }
+    canvas { width: 100%; }
+
+    .competitor-list { list-style: none; }
+    .competitor-item { background: #1e293b; border-radius: 8px; padding: 10px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+    .competitor-item .title { font-size: 12px; color: #e2e8f0; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .competitor-item .price { font-size: 14px; font-weight: 700; color: #60a5fa; }
+    .competitor-item .remove { cursor: pointer; color: #64748b; font-size: 16px; }
+    .competitor-item .remove:hover { color: #f87171; }
+
+    .setting-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #1e293b; }
+    .setting-label { font-size: 13px; }
+    .setting-desc { font-size: 11px; color: #64748b; }
+
+    .toggle { position: relative; width: 40px; height: 22px; cursor: pointer; }
+    .toggle input { display: none; }
+    .toggle .slider { position: absolute; inset: 0; background: #334155; border-radius: 11px; transition: 0.3s; }
+    .toggle .slider::before { content: ''; position: absolute; width: 16px; height: 16px; left: 3px; top: 3px; background: #94a3b8; border-radius: 50%; transition: 0.3s; }
+    .toggle input:checked + .slider { background: #3b82f6; }
+    .toggle input:checked + .slider::before { transform: translateX(18px); background: #fff; }
+
+    .btn { display: block; width: 100%; padding: 10px; border-radius: 8px; border: none; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+    .btn-primary { background: linear-gradient(135deg, #3b82f6, #7c3aed); color: #fff; }
+    .btn-primary:hover { opacity: 0.9; }
+    .btn-outline { background: transparent; color: #60a5fa; border: 1px solid #334155; margin-top: 8px; }
+    .btn-outline:hover { background: #1e293b; }
+    .btn-upgrade { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; margin-top: 12px; }
+
+    .pro-lock { text-align: center; padding: 30px 16px; color: #64748b; }
+    .pro-lock .icon { font-size: 32px; margin-bottom: 8px; }
+
+    .empty { text-align: center; padding: 20px; color: #475569; font-size: 13px; }
+    .footer { padding: 12px 16px; text-align: center; font-size: 10px; color: #475569; border-top: 1px solid #1e293b; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icons/icon48.png" alt="">
+    <h1>eBay Seller Analytics</h1>
+    <span class="badge" id="plan-badge">...</span>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="dashboard">📊 Dashboard</div>
+    <div class="tab" data-tab="competitors">👁️ Competitors</div>
+    <div class="tab" data-tab="settings">⚙️ Settings</div>
+  </div>
+
+  <div class="tab-content active" id="tab-dashboard">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Today</div>
+        <div class="stat-value" id="today-count">—</div>
+        <div class="stat-sub" id="today-revenue">$0.00</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">This Week</div>
+        <div class="stat-value" id="week-count">—</div>
+        <div class="stat-sub" id="week-revenue">$0.00</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Monthly Revenue</div>
+        <div class="stat-value" id="month-revenue">—</div>
+        <div class="stat-sub" id="month-profit">Net: $0.00</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Monthly Sales</div>
+        <div class="stat-value" id="month-count">—</div>
+        <div class="stat-sub" id="velocity-trend">—</div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <canvas id="popup-chart" width="348" height="120"></canvas>
+    </div>
+    <button class="btn btn-outline" id="export-btn">📥 Export Data (CSV)</button>
+  </div>
+
+  <div class="tab-content" id="tab-competitors">
+    <div id="competitors-container"></div>
+  </div>
+
+  <div class="tab-content" id="tab-settings">
+    <div class="section">
+      <div class="section-title">Display</div>
+      <div class="setting-row">
+        <div><div class="setting-label">Profit Overlay</div><div class="setting-desc">Show profit on listings</div></div>
+        <label class="toggle"><input type="checkbox" id="setting-profit" checked><span class="slider"></span></label>
+      </div>
+      <div class="setting-row">
+        <div><div class="setting-label">Quality Score</div><div class="setting-desc">Show listing grades</div></div>
+        <label class="toggle"><input type="checkbox" id="setting-quality" checked><span class="slider"></span></label>
+      </div>
+      <div class="setting-row">
+        <div><div class="setting-label">Velocity Widget</div><div class="setting-desc">Show sales velocity</div></div>
+        <label class="toggle"><input type="checkbox" id="setting-velocity" checked><span class="slider"></span></label>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">Competitor Alerts</div>
+      <div class="setting-row">
+        <div><div class="setting-label">Alert Threshold</div><div class="setting-desc">Alert when undercut by this %</div></div>
+        <select id="setting-threshold" style="background:#1e293b;color:#e2e8f0;border:1px solid #334155;border-radius:6px;padding:4px 8px;">
+          <option value="3">3%</option>
+          <option value="5" selected>5%</option>
+          <option value="10">10%</option>
+          <option value="15">15%</option>
+        </select>
+      </div>
+    </div>
+    <div id="upgrade-section"></div>
+  </div>
+
+  <div class="footer">eBay Seller Analytics v1.0.0 · Not affiliated with eBay Inc.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

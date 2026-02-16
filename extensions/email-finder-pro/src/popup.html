@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Email Finder Pro</span>
+      </div>
+      <div class="status-bar">
+        <span id="plan-badge" class="badge badge-free">Free</span>
+        <span id="usage-text" class="usage-text"></span>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="finder">🔍 Finder</button>
+      <button class="tab" data-tab="contacts">👥 Contacts</button>
+      <button class="tab" data-tab="settings">⚙️</button>
+    </nav>
+
+    <!-- Finder Tab -->
+    <div id="tab-finder" class="tab-content active">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" id="inp-first" placeholder="John" />
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" id="inp-last" placeholder="Smith" />
+      </div>
+      <div class="form-group">
+        <label>Company Domain</label>
+        <input type="text" id="inp-domain" placeholder="example.com" />
+      </div>
+      <button class="btn btn-primary" id="btn-find">🔍 Find Email</button>
+      <div id="finder-results"></div>
+    </div>
+
+    <!-- Contacts Tab -->
+    <div id="tab-contacts" class="tab-content">
+      <div class="search-row">
+        <input type="text" id="contact-search" placeholder="Search contacts..." />
+        <button class="btn btn-sm" id="btn-export">📥 CSV</button>
+      </div>
+      <div id="contacts-list" class="contacts-list"></div>
+      <div id="contacts-empty" class="empty-state">
+        <p>No contacts yet.</p>
+        <p class="muted">Find emails on LinkedIn or use the Finder tab.</p>
+      </div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div id="tab-settings" class="tab-content">
+      <div class="settings-section">
+        <h3>Plan</h3>
+        <div id="plan-info"></div>
+        <button class="btn btn-primary" id="btn-upgrade" style="display:none;">⚡ Upgrade to Pro — $19.99/mo</button>
+        <p id="pro-status" style="display:none;" class="pro-text">✅ Pro — Unlimited lookups</p>
+      </div>
+      <div class="settings-section">
+        <h3>Website Email Finder</h3>
+        <p class="muted">When active on a non-LinkedIn site, the extension scans for email addresses on the page.</p>
+        <button class="btn" id="btn-scan-page">🌐 Scan Current Page</button>
+        <div id="scan-results"></div>
+      </div>
+      <div class="settings-section">
+        <h3>Data</h3>
+        <button class="btn btn-danger" id="btn-clear">🗑️ Clear All Contacts</button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 360px; min-height: 300px; font-family: -apple-system, system-ui, sans-serif; background: #fafafa; color: #333; }
+.header { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 15px; font-weight: 600; }
+.pro-btn { background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.4); color: #fff; padding: 4px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; }
+.content { padding: 12px; }
+.current { background: #fff; border-radius: 8px; padding: 12px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.current .price { font-size: 24px; font-weight: 700; color: #667eea; }
+.current .title { font-size: 12px; color: #666; margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+canvas { width: 100%; height: 120px; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.tracked { margin-top: 12px; }
+.tracked h3 { font-size: 12px; color: #999; margin-bottom: 6px; }
+.item { background: #fff; border-radius: 6px; padding: 8px 10px; margin-bottom: 4px; display: flex; justify-content: space-between; font-size: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+.empty { text-align: center; color: #999; padding: 40px 20px; font-size: 13px; }
+</style>
+</head><body>
+<div class="header"><h1>💰 Price Tracker Lite</h1><button class="pro-btn" id="proBtn">⭐ Pro</button></div>
+<div class="content">
+  <div id="currentView" style="display:none">
+    <div class="current"><div class="price" id="price"></div><div class="title" id="title"></div></div>
+    <canvas id="chart" height="120"></canvas>
+  </div>
+  <div id="trackedList" class="tracked"></div>
+  <div id="empty" class="empty">Visit an Amazon or eBay product page to start tracking prices.</div>
+</div>
+<script src="ExtPay.js"></script>
+<script src="popup.js"></script>
+</body></html>

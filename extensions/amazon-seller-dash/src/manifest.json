@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Seller Dashboard \u2014 Profit Calculator & Analytics",
+  "version": "1.0.0",
+  "description": "FBA/FBM profit calculator, sales velocity, inventory alerts, BSR tracker, review monitor, competitor tracking & PPC stats for Ama...",
+  "permissions": [
+    "storage",
+    "alarms",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://sellercentral.amazon.com/*",
+    "*://www.amazon.com/*"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://sellercentral.amazon.com/*"
+      ],
+      "css": [
+        "css/overlay.css"
+      ],
+      "js": [
+        "lib/ExtPay.js",
+        "js/storage.js",
+        "js/utils.js",
+        "js/profit-calculator.js",
+        "js/inventory-alerts.js",
+        "js/review-monitor.js",
+        "js/ppc-stats.js",
+        "js/sales-velocity.js",
+        "js/keyword-tracker.js",
+        "js/content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://www.amazon.com/*"
+      ],
+      "css": [
+        "css/overlay.css"
+      ],
+      "js": [
+        "lib/ExtPay.js",
+        "js/storage.js",
+        "js/utils.js",
+        "js/bsr-tracker.js",
+        "js/competitor-tracker.js",
+        "js/amazon-content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "pages/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

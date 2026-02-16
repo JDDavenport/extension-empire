@@ -1,0 +1,13 @@
+template_name,type,format,description,key_fields
+Client Intake Form,Form,"Google Docs, PDF","New client registration with health screening","Name, contact, allergies, medications, consent, cancellation policy"
+Consultation Form,Form,"Google Docs, PDF","Detailed service consultation for new services","Hair history, desired results, skin assessment, photo consent"
+Client Record Card,Form,"Google Docs, PDF","Running record of client visits and services","Date, service, products used, formulas, notes, tips"
+Appointment Tracker,Spreadsheet,Google Sheets,"Weekly appointment grid with revenue tracking","Time slots, client, service, duration, price, daily total"
+Employee Schedule,Spreadsheet,Google Sheets,"Weekly staff scheduling with hours calculation","Employee, shifts, breaks, hours worked, PTO tracking"
+Service Menu Template,Document,"Google Docs, PDF","Professional service menu with pricing","Categories, service name, description, duration, price, add-ons"
+Revenue Tracker,Spreadsheet,Google Sheets,"Daily/monthly income tracking by category","Service income, retail, tips, payment method, monthly totals"
+Inventory Tracker,Spreadsheet,Google Sheets,"Product inventory with reorder alerts","Item, brand, cost, qty, reorder point, supplier, low stock alerts"
+Expense Tracker,Spreadsheet,Google Sheets,"Business expense tracking with tax categories","Date, category, vendor, amount, tax deductible, receipt status"
+Opening/Closing Checklist,Checklist,PDF,"Daily operational procedures","Opening tasks, closing tasks, weekly deep clean, monthly maintenance"
+KPI Dashboard,Spreadsheet,Google Sheets,"Key performance metrics tracking","Revenue/hour, retention rate, avg ticket, rebook rate, utilization"
+New Hire Onboarding,Checklist,"Google Docs, PDF","Staff onboarding process","Pre-hire, day 1, week 1, month 1, equipment tracking"

@@ -1,0 +1,441 @@
+/* YT Analytics Pro — Overlay Styles */
+:root {
+  --ytap-primary: #ff0000;
+  --ytap-primary-dark: #cc0000;
+  --ytap-bg: #1a1a2e;
+  --ytap-bg-light: #16213e;
+  --ytap-surface: #0f3460;
+  --ytap-text: #e4e4e4;
+  --ytap-text-muted: #9a9ab0;
+  --ytap-accent: #e94560;
+  --ytap-green: #00c853;
+  --ytap-yellow: #ffd600;
+  --ytap-blue: #2979ff;
+  --ytap-radius: 10px;
+  --ytap-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* Main floating panel */
+#ytap-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 360px;
+  max-height: calc(100vh - 120px);
+  background: var(--ytap-bg);
+  border-radius: var(--ytap-radius);
+  box-shadow: var(--ytap-shadow);
+  z-index: 99999;
+  font-family: 'Roboto', 'YouTube Sans', sans-serif;
+  color: var(--ytap-text);
+  overflow-y: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+#ytap-panel.ytap-collapsed {
+  transform: translateX(calc(100% + 30px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Toggle button */
+#ytap-toggle {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--ytap-primary);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 100000;
+  box-shadow: 0 2px 12px rgba(255,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+#ytap-toggle:hover { transform: scale(1.1); }
+#ytap-toggle.ytap-active { right: 388px; }
+
+/* Header */
+.ytap-header {
+  padding: 16px;
+  background: linear-gradient(135deg, var(--ytap-bg-light), var(--ytap-surface));
+  border-radius: var(--ytap-radius) var(--ytap-radius) 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ytap-header h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+.ytap-header .ytap-pro-badge {
+  background: var(--ytap-accent);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Tabs */
+.ytap-tabs {
+  display: flex;
+  background: var(--ytap-bg-light);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ytap-tabs::-webkit-scrollbar { display: none; }
+.ytap-tab {
+  flex: 0 0 auto;
+  padding: 10px 14px;
+  font-size: 11px;
+  color: var(--ytap-text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.ytap-tab:hover { color: var(--ytap-text); }
+.ytap-tab.active {
+  color: var(--ytap-primary);
+  border-bottom-color: var(--ytap-primary);
+}
+.ytap-tab .ytap-lock { font-size: 9px; margin-left: 3px; }
+
+/* Section */
+.ytap-section {
+  padding: 16px;
+  display: none;
+}
+.ytap-section.active { display: block; }
+
+/* Cards */
+.ytap-card {
+  background: var(--ytap-bg-light);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.ytap-card-title {
+  font-size: 12px;
+  color: var(--ytap-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* Stats grid */
+.ytap-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ytap-stat {
+  background: var(--ytap-surface);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.ytap-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+.ytap-stat-label {
+  font-size: 11px;
+  color: var(--ytap-text-muted);
+  margin-top: 2px;
+}
+.ytap-stat-change {
+  font-size: 11px;
+  margin-top: 4px;
+}
+.ytap-stat-change.up { color: var(--ytap-green); }
+.ytap-stat-change.down { color: var(--ytap-accent); }
+
+/* Sentiment bars */
+.ytap-sentiment-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+.ytap-sentiment-bar .positive { background: var(--ytap-green); }
+.ytap-sentiment-bar .negative { background: var(--ytap-accent); }
+.ytap-sentiment-bar .questions { background: var(--ytap-blue); }
+.ytap-sentiment-bar .neutral { background: var(--ytap-text-muted); }
+
+.ytap-sentiment-legend {
+  display: flex;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--ytap-text-muted);
+}
+.ytap-sentiment-legend span::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.ytap-sentiment-legend .pos::before { background: var(--ytap-green); }
+.ytap-sentiment-legend .neg::before { background: var(--ytap-accent); }
+.ytap-sentiment-legend .que::before { background: var(--ytap-blue); }
+.ytap-sentiment-legend .neu::before { background: var(--ytap-text-muted); }
+
+/* Tags */
+.ytap-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ytap-tag {
+  background: var(--ytap-surface);
+  color: var(--ytap-text);
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.ytap-tag:hover {
+  background: var(--ytap-primary);
+  color: #fff;
+}
+.ytap-tag.selected {
+  background: var(--ytap-primary);
+  color: #fff;
+}
+.ytap-tag-score {
+  font-size: 10px;
+  color: var(--ytap-text-muted);
+  margin-left: 4px;
+}
+
+/* Buttons */
+.ytap-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+.ytap-btn-primary {
+  background: var(--ytap-primary);
+  color: #fff;
+}
+.ytap-btn-primary:hover { background: var(--ytap-primary-dark); }
+.ytap-btn-secondary {
+  background: var(--ytap-surface);
+  color: var(--ytap-text);
+}
+.ytap-btn-pro {
+  background: linear-gradient(135deg, var(--ytap-accent), #ff6b6b);
+  color: #fff;
+}
+
+/* Inputs */
+.ytap-input {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--ytap-surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  color: var(--ytap-text);
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+.ytap-input:focus { border-color: var(--ytap-primary); }
+
+/* Tables */
+.ytap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.ytap-table th {
+  text-align: left;
+  color: var(--ytap-text-muted);
+  font-weight: 500;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ytap-table td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Pro gate overlay */
+.ytap-pro-gate {
+  text-align: center;
+  padding: 24px 16px;
+}
+.ytap-pro-gate h3 {
+  color: #fff;
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+.ytap-pro-gate p {
+  color: var(--ytap-text-muted);
+  font-size: 13px;
+  margin: 0 0 16px 0;
+}
+
+/* Heatmap grid (upload timing) */
+.ytap-heatmap {
+  display: grid;
+  grid-template-columns: 40px repeat(24, 1fr);
+  gap: 2px;
+  font-size: 9px;
+}
+.ytap-heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ytap-heatmap-label {
+  display: flex;
+  align-items: center;
+  color: var(--ytap-text-muted);
+  font-size: 10px;
+}
+
+/* Competitor row */
+.ytap-competitor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.ytap-competitor-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ytap-surface);
+}
+.ytap-competitor-info { flex: 1; }
+.ytap-competitor-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+.ytap-competitor-meta {
+  font-size: 11px;
+  color: var(--ytap-text-muted);
+}
+
+/* Scrollbar */
+#ytap-panel::-webkit-scrollbar { width: 4px; }
+#ytap-panel::-webkit-scrollbar-track { background: transparent; }
+#ytap-panel::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #ytap-panel { width: 300px; right: 10px; }
+  #ytap-toggle.ytap-active { right: 318px; }
+}
+
+/* Loading spinner */
+.ytap-loading {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.ytap-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--ytap-surface);
+  border-top-color: var(--ytap-primary);
+  border-radius: 50%;
+  animation: ytap-spin 0.8s linear infinite;
+}
+@keyframes ytap-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Thumbnail grid */
+.ytap-thumb-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.ytap-thumb-card {
+  background: var(--ytap-surface);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.ytap-thumb-card:hover, .ytap-thumb-card.active {
+  border-color: var(--ytap-primary);
+}
+.ytap-thumb-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.ytap-thumb-stats {
+  padding: 6px 8px;
+  font-size: 11px;
+  color: var(--ytap-text-muted);
+}
+
+/* Bulk editor */
+.ytap-bulk-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.ytap-bulk-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.ytap-bulk-item input[type="checkbox"] {
+  accent-color: var(--ytap-primary);
+}
+.ytap-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px 12px;
+  background: var(--ytap-surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  color: var(--ytap-text);
+  font-size: 13px;
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+.ytap-textarea:focus { border-color: var(--ytap-primary); }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=440,initial-scale=1">
+  <link rel="stylesheet" href="popup.css">
+  <title>TikTok Shop Tools</title>
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-brand">
+        <span class="header-logo">📊</span>
+        <span class="header-title">TikTok Shop Tools</span>
+      </div>
+      <div class="header-badge" id="proBadge" style="display:none">PRO</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="dashboard">Dashboard</button>
+      <button class="tab" data-tab="templates">Templates</button>
+      <button class="tab" data-tab="inventory">Inventory</button>
+      <button class="tab" data-tab="settings">Settings</button>
+    </div>
+
+    <!-- Dashboard Tab -->
+    <div class="tab-content active" id="tab-dashboard">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">Today's Revenue</div>
+          <div class="metric-value" id="metricRevenue">—</div>
+          <div class="metric-sub" id="metricRevenueTrend"></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Orders</div>
+          <div class="metric-value" id="metricOrders">—</div>
+          <div class="metric-sub" id="metricOrdersTrend"></div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Avg Order Value</div>
+          <div class="metric-value" id="metricAOV">—</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Conversion Rate</div>
+          <div class="metric-value" id="metricConv">—</div>
+        </div>
+      </div>
+
+      <div class="section-title">Sales History (Last 7 Days)</div>
+      <div class="chart-container" id="chartContainer">
+        <div class="chart-empty">Visit your TikTok Shop seller dashboard to start tracking</div>
+      </div>
+
+      <button class="btn btn-primary" id="btnExport">
+        <span>📥</span> Export Orders to CSV
+        <span class="pro-tag" id="exportProTag">PRO</span>
+      </button>
+    </div>
+
+    <!-- Templates Tab -->
+    <div class="tab-content" id="tab-templates">
+      <div class="section-title">Quick Reply Templates</div>
+      <div id="templateList" class="template-list"></div>
+      <div class="template-add">
+        <input type="text" id="newTemplateName" placeholder="Template name..." class="input">
+        <textarea id="newTemplateText" placeholder="Template message..." class="input textarea" rows="3"></textarea>
+        <button class="btn btn-primary" id="btnAddTemplate">+ Add Template</button>
+      </div>
+      <div class="pro-upsell" id="templateUpsell" style="display:none">
+        <div class="pro-upsell-icon">🔒</div>
+        <div class="pro-upsell-text">Free plan limited to 3 templates</div>
+        <button class="btn btn-accent btn-small" id="btnUpgradeTemplates">Upgrade to Pro</button>
+      </div>
+    </div>
+
+    <!-- Inventory Tab -->
+    <div class="tab-content" id="tab-inventory">
+      <div class="section-title">Inventory Alerts</div>
+      <div id="inventoryList" class="inventory-list">
+        <div class="empty-state">Navigate to your TikTok Shop products page to track inventory</div>
+      </div>
+      <div class="pro-upsell" id="inventoryUpsell">
+        <div class="pro-upsell-icon">🔔</div>
+        <div class="pro-upsell-text">Low stock alerts are a Pro feature</div>
+        <button class="btn btn-accent btn-small" id="btnUpgradeInventory">Upgrade to Pro</button>
+      </div>
+    </div>
+
+    <!-- Settings Tab -->
+    <div class="tab-content" id="tab-settings">
+      <div class="section-title">Settings</div>
+      <div class="setting-row">
+        <label class="setting-label">
+          <span>Dashboard Overlay</span>
+          <span class="setting-desc">Show floating dashboard on seller pages</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="settingDashboard" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <label class="setting-label">
+          <span>Notifications</span>
+          <span class="setting-desc">Low stock & order alerts</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="settingNotifications" checked>
+          <span class="toggle-slider"></span>
+        </label>
+      </div>
+      <div class="setting-row">
+        <label class="setting-label">
+          <span>Low Stock Threshold</span>
+          <span class="setting-desc">Alert when stock falls below</span>
+        </label>
+        <input type="number" id="settingThreshold" value="10" min="1" max="1000" class="input input-small">
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-title">Subscription</div>
+      <div class="plan-card" id="planCard">
+        <div class="plan-name" id="planName">Free Plan</div>
+        <div class="plan-desc" id="planDesc">3 templates • Basic analytics • Dashboard overlay</div>
+        <button class="btn btn-accent" id="btnUpgrade">Upgrade to Pro — $14.99/mo</button>
+      </div>
+
+      <div class="section-title" style="margin-top: 16px;">Pro Features</div>
+      <ul class="feature-list">
+        <li>✅ Unlimited reply templates</li>
+        <li>✅ CSV order export</li>
+        <li>✅ Competitor price tracking</li>
+        <li>✅ Inventory alerts & notifications</li>
+        <li>✅ Priority support</li>
+      </ul>
+
+      <div class="divider"></div>
+      <div class="footer-links">
+        <a href="https://tiktokshoptools.com/support" target="_blank">Support</a>
+        <a href="https://tiktokshoptools.com/privacy" target="_blank">Privacy</a>
+        <span class="version">v1.0.0</span>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

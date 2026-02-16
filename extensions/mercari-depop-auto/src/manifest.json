@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "RelistPro — Mercari Relist & Seller Tools",
+  "version": "1.0.0",
+  "description": "One-click relist, bulk tools, and listing stats for Mercari sellers. Save hours every day.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.mercari.com/*",
+    "https://jp.mercari.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.mercari.com/sell/listings/*", "https://www.mercari.com/items/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.mercari.com/mypage/listings*", "https://www.mercari.com/mypage/"],
+      "js": ["content-listings.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

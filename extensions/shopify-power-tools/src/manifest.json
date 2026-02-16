@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Shopify Quick Edit Power Tools",
+  "version": "1.0.0",
+  "description": "Inline editing, bulk price/inventory updates, SEO scores, competitor monitoring & analytics overlays for Shopify admin.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://*.myshopify.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.myshopify.com/admin/*"],
+      "css": ["styles/main.css"],
+      "js": [
+        "ExtPay.js",
+        "modules/utils.js",
+        "modules/inline-editor.js",
+        "modules/bulk-price.js",
+        "modules/bulk-inventory.js",
+        "modules/seo-score.js",
+        "modules/competitor-monitor.js",
+        "modules/order-dashboard.js",
+        "modules/image-optimizer.js",
+        "modules/discount-generator.js",
+        "modules/clv-calculator.js",
+        "modules/cart-recovery.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

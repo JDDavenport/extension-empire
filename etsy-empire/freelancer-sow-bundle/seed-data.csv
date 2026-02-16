@@ -1,0 +1,11 @@
+template_name,industry,sections_count,avg_word_count,key_sections,file_formats
+Web Development SOW,Technology,11,1800,"Scope,Timeline,Payment,Change Requests,IP,Acceptance",Google Docs + Word
+Graphic Design SOW,Creative,10,1500,"Deliverables,Revisions,Usage Rights,Payment,Unused Concepts",Google Docs + Word
+Marketing Strategy SOW,Marketing,11,1600,"KPIs,Ad Spend,Reporting,Data Privacy,Performance Disclaimers",Google Docs + Word
+Business Consulting SOW,Professional Services,11,1700,"Engagement Phases,Expenses,Non-Compete,Liability,Deliverable Acceptance",Google Docs + Word
+Photography SOW,Creative,9,1300,"Shoot Details,Usage Rights,Cancellation,Editing Scope,Licensing",Google Docs + Word
+Video Production SOW,Creative/Media,9,1400,"Production Phases,Deliverable Formats,Usage Rights,Cancellation,Revisions",Google Docs + Word
+Copywriting SOW,Content/Marketing,9,1200,"Content Deliverables,Tone & Style,SEO Requirements,Revision Policy,IP",Google Docs + Word
+Social Media Management SOW,Digital Marketing,10,1300,"Platforms,Posting Schedule,Approval Process,Metrics/KPIs,Account Access",Google Docs + Word
+SEO Services SOW,Digital Marketing,9,1500,"Audit Scope,Implementation,Link Building,Disclaimers,Access Required",Google Docs + Word
+General Freelancer SOW,Any Industry,13,2000,"Scope,Timeline,Payment,Change Requests,IP,Warranties,Termination",Google Docs + Word

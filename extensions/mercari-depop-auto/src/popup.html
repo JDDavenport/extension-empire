@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <title>RelistPro</title>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <h1>Relist<span>Pro</span></h1>
+      </div>
+      <span class="version">v1.0.0</span>
+    </div>
+    <p class="header-subtitle">Mercari seller automation tools</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-grid fade-in">
+    <div class="stat-card">
+      <div class="stat-label">Today's Relists</div>
+      <div class="stat-value highlight" id="stat-today">0</div>
+      <div class="stat-change neutral" id="stat-today-change">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Relists</div>
+      <div class="stat-value" id="stat-total">0</div>
+      <div class="stat-change neutral" id="stat-total-sub">all time</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Listings Tracked</div>
+      <div class="stat-value" id="stat-tracked">0</div>
+      <div class="stat-change neutral">on Mercari</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Rate Limit</div>
+      <div class="stat-value" id="stat-remaining">50</div>
+      <div class="stat-change neutral" id="stat-rate-sub">/50 this hour</div>
+    </div>
+  </div>
+
+  <!-- Activity Chart -->
+  <div class="section fade-in">
+    <div class="section-title">Last 7 Days</div>
+    <div id="chart-container"></div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="actions fade-in">
+    <div class="section-title" style="border-top: 1px solid var(--border); padding-top: 16px;">Quick Actions</div>
+    <button class="action-btn" id="action-listings">
+      <div class="action-icon">📋</div>
+      <div class="action-text">
+        <div class="title">My Listings</div>
+        <div class="desc">Select items to relist in bulk</div>
+      </div>
+      <span class="action-arrow">→</span>
+    </button>
+    <button class="action-btn" id="action-sell">
+      <div class="action-icon">➕</div>
+      <div class="action-text">
+        <div class="title">Create Listing</div>
+        <div class="desc">List a new item on Mercari</div>
+      </div>
+      <span class="action-arrow">→</span>
+    </button>
+  </div>
+
+  <!-- Pro Upsell -->
+  <div class="pro-banner fade-in" id="pro-banner">
+    <div class="pro-banner-title">
+      Unlock Full Power <span class="pro-badge">PRO</span>
+    </div>
+    <div class="pro-banner-desc">Auto-schedule relists, bulk 50 items, smart pricing, and more.</div>
+    <div class="pro-features">
+      <span class="pro-feature">⏰ Auto-scheduler</span>
+      <span class="pro-feature">📦 50-item bulk</span>
+      <span class="pro-feature">💰 Smart pricing</span>
+      <span class="pro-feature">📊 Analytics</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="footer-link"><span class="status-dot"></span>Active</span>
+    <span class="footer-link" id="footer-support">Support</span>
+    <span class="footer-link" id="footer-rate">⭐ Rate us</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

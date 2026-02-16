@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Etsy Seller Power Tools \u2014 SEO, Competitor Spy & Analytics",
+  "version": "1.0.0",
+  "description": "Boost your Etsy sales with SEO tag analysis, competitor insights, listing quality scores, bulk tag editing, keyword research, and...",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.etsy.com/*",
+    "https://extensionpay.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.etsy.com/*"
+      ],
+      "js": [
+        "lib/ExtPay.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*"
+      ],
+      "matches": [
+        "https://www.etsy.com/*"
+      ]
+    }
+  ]
+}
